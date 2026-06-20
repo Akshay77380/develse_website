@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-text-light font-body antialiased transition-colors duration-300;
+  }
+
+  html.dark body {
+    @apply bg-ink text-text-dark;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background-color: rgba(0, 168, 150, 0.25);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-brand-blue dark:text-brand-teal-light;
+  }
+
+  .container-x {
+    @apply mx-auto max-w-container px-6 md:px-10;
+  }
+
+  .signal-divider {
+    @apply relative h-px w-full bg-paper-border dark:bg-ink-border overflow-hidden;
+  }
+
+  .signal-divider::after {
+    content: "";
+    @apply absolute top-0 left-0 h-px w-24 bg-brand-gradient-h;
+    animation: signal-travel 3.5s linear infinite;
+  }
+
+  @keyframes signal-travel {
+    0% { left: -10%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+
+  .card-surface {
+    @apply bg-paper-surface dark:bg-ink-surface border border-paper-border dark:border-ink-border rounded-2xl;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2 focus-visible:ring-offset-paper dark:focus-visible:ring-offset-ink;
+  }
+
+  .btn-brand {
+    @apply bg-brand-gradient text-white hover:opacity-90 shadow-[0_4px_20px_rgba(0,102,179,0.25)];
+  }
+
+  .text-brand-gradient {
+    @apply bg-brand-gradient-h bg-clip-text text-transparent;
+  }
+
+  .section-bg {
+    @apply relative overflow-hidden;
+  }
+
+  .section-bg::before {
+    content: "";
+    @apply absolute inset-0 -z-10 bg-hero-glow pointer-events-none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

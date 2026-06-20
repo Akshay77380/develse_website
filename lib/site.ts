@@ -1,0 +1,51 @@
+export const siteConfig = {
+  name: "DevElse Services",
+  legalName: "DevElse Services Pvt Ltd",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.develseservices.com",
+  email: "develoopit25@gmail.com",
+  phone: "+91 7738039366",
+  whatsapp: "917738039366",
+  locale: "en_IN",
+  location: {
+    city: "Mumbai",
+    region: "Maharashtra",
+    country: "India",
+    countryCode: "IN",
+  },
+  tagline: "Transforming Ideas Into Digital Excellence",
+  description:
+    "DevElse Services Pvt Ltd is an AI-first software development company in Mumbai, India. We build mobile apps, AI agents, web platforms, and custom enterprise software for startups and businesses worldwide.",
+  keywords: [
+    "AI development company India",
+    "AI software development company Mumbai",
+    "mobile app development company India",
+    "Flutter app development company",
+    "custom software development company",
+    "web development services India",
+    "AI chatbot development",
+    "AI agent development company",
+    "generative AI solutions",
+    "enterprise software development",
+    "product development company",
+    "IT consulting company Mumbai",
+    "software development company Maharashtra",
+    "DevElse Services",
+  ],
+  social: {
+    linkedin: "",
+    twitter: "",
+    instagram: "",
+    github: "",
+  },
+} as const;
+
+export const serviceKeywords = [
+  "Product Discovery",
+  "UI UX Design",
+  "Mobile App Development",
+  "Web Development",
+  "AI Automation",
+  "Quality Assurance",
+  "DevOps",
+  "Software Maintenance",
+];
